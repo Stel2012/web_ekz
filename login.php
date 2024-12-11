@@ -33,10 +33,10 @@
 require_once('db.php');
 
 if (isset($_COOKIE['User'])) {
-    header("Location: index.php");
+    header("Location: hello.php");
 }
 
-$link = mysqli_connect('127.0.0.1', 'root', '123456', 'web');
+$link = mysqli_connect('db', 'root', '123456', 'web');
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];

@@ -13,8 +13,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12 index">
-            <h1>Страница приветствия</h1>
-
+            <h1 class="nav_text">Страница приветствия</h1>
+        
 
 
         <?php
@@ -23,17 +23,18 @@
             <a href="/rega.php">Зарегистрируйтесь</a> или <a href="/login.php">войдите</a>, чтобы просматривать контент!
         <?php
         } else {
-        ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="hello">
-                            Привет, <?php echo $_COOKIE['User']; ?>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        <?php
+
+            $link = mysqli_connect('127.0.0.1', 'root', '123456', 'web');
+
+            $sql = "SELECT * FROM users";
+            $res = mysqli_query($link, $sql);
+            if (mysqli_num_rows($res) >  0) {
+                while ($usr = mysqli_fetch_array($res)) {
+                    echo "<a href='/hello.php?id=" . $usr["id"] . "'>" . $usr['username'] . "</a><br>";
+                }
+               } else {
+                    echo "УЗ пока нет";
+               }
         }
         ?>
         </div>
