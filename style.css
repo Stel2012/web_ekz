@@ -1,0 +1,67 @@
+body {    
+    background-color: #8789a4;
+    font-family: 'Courier New', Courier, monospace;
+    color: wheat;
+}
+.container {
+    margin-top: 10px;
+}
+.my_photo{
+    background: url(.//images//img.jpg) no-repeat center center;
+    background-size: 100%;
+    width: 290px;
+    height: 150px;
+}
+.nav_logo{
+    background: url(.//images//logo.png) no-repeat center center;
+    background-size: 20%;
+}
+.nav_bar{
+    font-size: 30px;
+    font-weight: bold;
+}
+.nav_text{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-weight: bold;
+}
+.title_photo{
+    text-align: center;
+    color: rgb(43, 23, 156);
+    font-weight: bold;
+}
+.button_js{
+    text-align: center;
+}
+#myButton, .btn_reg{
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(43, 23, 156);
+    color: wheat;
+    font-weight: bolder;
+}
+#clc_img{
+    width: 500px;
+    margin-top: 10px;
+}
+.index{
+    text-align: center;
+}
+.btn_reg{
+    font-size: 120%;
+    margin-top: 10px;
+}
+.form{
+    color: blue;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.row_reg{
+    text-align: center;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;  
+}
