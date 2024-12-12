@@ -28,7 +28,23 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="hello">
-                            Привет, <?php echo $_COOKIE['User']; ?>
+                            <?php 
+                            //echo $_COOKIE['User'];
+                            $link = mysqli_connect('db', 'root', '123456', 'web');
+                            $username = $_COOKIE['User'];
+
+                            $sql = "SELECT * FROM users WHERE username = '$username'";
+                            //echo $sql;
+                            $result = mysqli_query($link, $sql);
+
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $row = mysqli_fetch_assoc($result);
+                                echo "<h1>Привет, " . $row['username'] . "!</h1>";
+                            } else {
+                                echo "<h1>Пользователь не найден!</h1>";
+                            }
+                            
+                            ?>
                         </h1>
                     </div>
                 </div>
